@@ -31,7 +31,7 @@ This will:
 - create a symbolic link to the Roc compiler in the `~/.rocup/roc` directory
 - (sudo priviledges required) create a symbolic links for `roc` and `roc_language_server` in `/usr/local/bin` to the compiler installed in the `~/.rocup/roc` directory
 
-If you add .rocup to your PATH, you can run `rocup` from anywhere in your terminal.
+If you add `.rocup` directory to your PATH, you can run `rocup` from anywhere in your terminal.
 
 ## Example usage
 
