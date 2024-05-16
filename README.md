@@ -33,10 +33,9 @@ This will:
 
 If you add .rocup to your PATH, you can run `rocup` from anywhere in your terminal.
 
-````bash
-
 ## Example usage
 
+````bash
 Executing the `rocup` command will download the latest version of the Roc compiler and install it locally with symbolic links created. The output will look like this:
 
 ```terminal
