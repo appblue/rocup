@@ -35,11 +35,10 @@ If you add `.rocup` directory to your PATH, you can run `rocup` from anywhere in
 
 ## Example usage
 
-````bash
 Executing the `rocup` command will download the latest version of the Roc compiler and install it locally with symbolic links created. The output will look like this:
 
 ```terminal
-~/.rocup> ./rocup
+$ ~/.rocup/rocup
 .. apple silicon mac detected
 .. downloading latest release of the Roc compiler
 .. extracting: roc_nightly-macos_apple_silicon-latest.tar.gz
@@ -56,8 +55,7 @@ roc nightly pre-release, built from commit e5ea6dc4617 on Mon May 13 10:47:45 UT
 Over time, you will have more than one version of the Roc compiler downloaded locally in `.rocup` directory. You can switch between them using the following command (for example, to switch to the second latest version):
 
 ```terminal
-
-~/.rocup> ./rocup 2
+$ ~/.rocup/rocup 2
 .. apple silicon mac detected
 .. downloading latest release of the Roc compiler
 .. extracting: roc_nightly-macos_apple_silicon-latest.tar.gz
