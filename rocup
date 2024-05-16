@@ -1,6 +1,7 @@
-#/bin/bash
+#!/bin/bash
 
 version=${1:-1}
+ROCUP_HOME=${ROCUP_HOME:-$HOME/.rocup}
 
 if [ "$(uname -s)" == "Darwin" -a "$(uname -m)" == "arm64" ]; then
     echo ".. apple silicon mac detected"
@@ -14,27 +15,28 @@ elif [ "$(uname -s)" == "Linux" -a "$(uname -m)" == "x86_64" ]; then
 fi
 
 echo ".. downloading latest release of the Roc compiler"
-curl -sOL "${platform_url}"
-name=$( ls -rt roc_nightly*.tar.gz | tail -1 )
+( cd $ROCUP_HOME ; curl -sOL "${platform_url}" )
+name=$( cd $ROCUP_HOME ; ls -rt roc_nightly*.tar.gz | tail -1 )
 
 echo ".. extracting: $name"
-tar xzf $name
+( cd $ROCUP_HOME ; tar xzf $name )
 
 echo ".. installing nth latest local version (n = $version)"
 echo
 echo ".. selected locally available versions"
 echo "======================================"
-ls -t roc_*/roc | awk -vver=${version} '{ if (NR==ver) {print " -> ", $0} else {print "    ", $0}}'
+( cd $ROCUP_HOME ; ls -t ~/.rocup/roc_*/roc | awk -vver=${version} '{ if (NR==ver) {print " -> ", $0} else {print "    ", $0}}' )
 
 echo
 echo ".. creating local symlink to latest downloaded version"
-rm roc
-ln -s $( ls -rt roc_*/roc | tail -${version} | head -1 | sed 's;/roc;;' ) roc
+( cd $ROCUP_HOME;  rm -f roc )
+( cd $ROCUP_HOME ; ln -s $( ls -rt $ROCUP_HOME/roc_*/roc | tail -${version} | head -1 | sed 's;/roc$;;' ) roc )
 
 if [ ! -L /usr/local/bin/roc ]; then
 	echo ".. creating symlinks in /usr/local/bin"
-	sudo ln -sf $PWD/roc/roc /usr/local/bin/roc
-	sudo ln -sf $PWD/roc/roc_language_server /usr/local/bin/roc_language_server
+	sudo ln -sf $ROCUP_HOME/roc/roc /usr/local/bin/roc
+	sudo ln -sf $ROCUP_HOME/.rocup/roc_language_server /usr/local/bin/roc_language_server
 fi
 
+# execute the command to show roc compiler version
 roc version
