@@ -8,8 +8,8 @@ To install RocUp, you can use the following command:
 
 ```bash
 mkdir -p ~/.rocup
-
 curl -sSL https://raw.githubusercontent.com/roc-lang/rocup/master/rocup > ~/.rocup/rocup
+chmod a+x ~/.rocup/rocup
 ```
 
 ## Running RocUp
