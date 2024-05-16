@@ -32,7 +32,7 @@ This will:
 
 Executing the `rocup` command will download the latest version of the Roc compiler and install it locally with symbolic links created. The output will look like this:
 
-```bash
+```terminal
 ~/.rocup> ./rocup
 .. apple silicon mac detected
 .. downloading latest release of the Roc compiler
@@ -49,7 +49,7 @@ roc nightly pre-release, built from commit e5ea6dc4617 on Mon May 13 10:47:45 UT
 
 Over time, you will have more than one version of the Roc compiler downloaded locally in `.rocup` directory. You can switch between them using the following command (for example, to switch to the second latest version):
 
-```bash
+```terminal
 
 ~/.rocup> ./rocup 2
 .. apple silicon mac detected
