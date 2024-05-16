@@ -21,8 +21,7 @@ chmod a+x ~/.rocup/rocup
 To run RocUp, you can use the following command:
 
 ```bash
-$ cd ~/.rocup
-./rocup
+$ ~/.rocup/rocup
 ```
 
 This will:
@@ -31,6 +30,10 @@ This will:
 - install it locally in the `~/.rocup` directory
 - create a symbolic link to the Roc compiler in the `~/.rocup/roc` directory
 - (sudo priviledges required) create a symbolic links for `roc` and `roc_language_server` in `/usr/local/bin` to the compiler installed in the `~/.rocup/roc` directory
+
+If you add .rocup to your PATH, you can run `rocup` from anywhere in your terminal.
+
+````bash
 
 ## Example usage
 
@@ -49,7 +52,7 @@ Executing the `rocup` command will download the latest version of the Roc compil
 
 .. creating local symlink to latest downloaded version
 roc nightly pre-release, built from commit e5ea6dc4617 on Mon May 13 10:47:45 UTC 2024
-```
+````
 
 Over time, you will have more than one version of the Roc compiler downloaded locally in `.rocup` directory. You can switch between them using the following command (for example, to switch to the second latest version):
 
