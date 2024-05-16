@@ -2,6 +2,10 @@
 
 RocUp is a tool for managing your Roc compiler installation. It allows you to install locally the latest version of the Roc compiler, and to switch between different locally installed versions.
 
+Note: RocUp is does not allow to download older versions of the Roc compiler. It only allows to download the latest version of the Roc compiler, but keeps all downloaded versions locally in the `~/.rocup` directory, and allows switching back and forth between them.
+
+Note: RocUp is currently only available for macOS (Silicon and Intel based machines) and Linux (x86_64).
+
 ## Installation
 
 To install RocUp, you can use the following command:
