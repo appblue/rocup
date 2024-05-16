@@ -5,7 +5,7 @@ version=${1:-1}
 if [ "$(uname -s)" == "Darwin" -a "$(uname -m)" == "arm64" ]; then
     echo ".. apple silicon mac detected"
     platform_url='https://github.com/roc-lang/roc/releases/download/nightly/roc_nightly-macos_apple_silicon-latest.tar.gz'
-elif [ "$(uname -s)" == "Darwin" -a "$(uname -m)" == "arm64" ]; then
+elif [ "$(uname -s)" == "Darwin" -a "$(uname -m)" == "x86_64" ]; then
     echo ".. apple intel mac detected"
     platform_url='https://github.com/roc-lang/roc/releases/download/nightly/roc_nightly-macos_x86_64-latest.tar.gz'
 elif [ "$(uname -s)" == "Linux" -a "$(uname -m)" == "x86_64" ]; then
