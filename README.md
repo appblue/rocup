@@ -54,11 +54,17 @@ $ ~/.rocup/rocup
 .. installing nth latest local version (n = 1)
 
 .. selected locally available versions
-======================================
- ->  roc_nightly-macos_apple_silicon-2024-05-13-e5ea6dc4617/roc
+   -----------------------------------
+ ->  /Users/krzysztof.kielak/.rocup/roc_nightly-macos_apple_silicon-2024-05-13-e5ea6dc4617/roc
 
 .. creating local symlink to latest downloaded version
-roc nightly pre-release, built from commit e5ea6dc4617 on Mon May 13 10:47:45 UTC 2024
+.. attempting to create symlinks in /usr/local/bin
+.. are you sure you want to overwrite roc and roc_language_server in /usr/local/bin? [y/N] y
+
+.. installation complete
+.. .. roc compiler is now available in /usr/local/bin/roc
+.. .. roc language server is now available in /usr/local/bin/roc_language_server
+.. .. roc compiler version: roc nightly pre-release, built from commit e5ea6dc4617 on Mon May 13 10:47:45 UTC 2024
 ```
 
 Over time, you will have more than one version of the Roc compiler downloaded locally in `.rocup` directory. You can switch between them using the following command (for example, to switch to the second latest version):
@@ -71,11 +77,13 @@ $ ~/.rocup/rocup 2
 .. installing nth latest local version (n = 2)
 
 .. selected locally available versions
-======================================
-     roc_nightly-macos_apple_silicon-2024-05-13-e5ea6dc4617/roc
- ->  roc_nightly-macos_apple_silicon-2024-05-11-dd9a6ff2e4a/roc
+   -----------------------------------
+     /Users/krzysztof.kielak/.rocup/roc_nightly-macos_apple_silicon-2024-05-13-e5ea6dc4617/roc
+ ->  /Users/krzysztof.kielak/.rocup/roc_nightly-macos_apple_silicon-2024-05-11-dd9a6ff2e4a/roc
 
 .. creating local symlink to latest downloaded version
-.. creating symlinks in /usr/local/bin
-roc nightly pre-release, built from commit dd9a6ff2e4a on Sat May 11 09:12:29 UTC 2024
+.. installation complete
+.. .. roc compiler is now available in /usr/local/bin/roc
+.. .. roc language server is now available in /usr/local/bin/roc_language_server
+.. .. roc compiler version: roc nightly pre-release, built from commit dd9a6ff2e4a on Sat May 11 09:12:29 UTC 2024
 ```
