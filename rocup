@@ -35,7 +35,7 @@ echo ".. creating local symlink to latest downloaded version"
 if [ ! -L /usr/local/bin/roc ]; then
 	echo ".. creating symlinks in /usr/local/bin"
 	sudo ln -sf $ROCUP_HOME/roc/roc /usr/local/bin/roc
-	sudo ln -sf $ROCUP_HOME/.rocup/roc_language_server /usr/local/bin/roc_language_server
+	sudo ln -sf $ROCUP_HOME/roc/roc_language_server /usr/local/bin/roc_language_server
 fi
 
 # execute the command to show roc compiler version
