@@ -32,18 +32,22 @@ echo ".. creating local symlink to latest downloaded version"
 ( cd $ROCUP_HOME;  rm -f roc )
 ( cd $ROCUP_HOME ; ln -s $( ls -rt $ROCUP_HOME/roc_*/roc | tail -${version} | head -1 | sed 's;/roc$;;' ) roc )
 
-if [ ! \( -L /usr/local/bin/roc -a -L /usr/local/bin/roc_language_server \) ]; then
+if [ ! \( -L /usr/local/bin/roc \
+       -a -L /usr/local/bin/roc_language_server \
+       -a -L /usr/local/bin/rocup \) ]; then
 	echo ".. attempting to create symlinks in /usr/local/bin"
-	read -r -p ".. are you sure you want to overwrite roc and roc_language_server in /usr/local/bin? [y/N] " REPLY
+	read -r -p ".. are you sure you want to overwrite rocup, roc and roc_language_server in /usr/local/bin? [y/N] " REPLY
 	echo
 	if [[ ! "$REPLY" =~ ^([yY][eE][sS]|[yY])$ ]]; then
         echo ".. aborting"
         exit 1
     fi
-	sudo ln -sf $ROCUP_HOME/roc/roc /usr/local/bin/roc
+    sudo ln -sf $ROCUP_HOME/rocup /usr/local/bin/rocup
+    sudo ln -sf $ROCUP_HOME/roc/roc /usr/local/bin/roc
 	sudo ln -sf $ROCUP_HOME/roc/roc_language_server /usr/local/bin/roc_language_server
 fi
 echo ".. installation complete"
+echo ".. .. rocup tool is now available in /usr/local/bin/rocup"
 echo ".. .. roc compiler is now available in /usr/local/bin/roc"
 echo ".. .. roc language server is now available in /usr/local/bin/roc_language_server"
 echo ".. .. roc compiler version: $(roc version)"

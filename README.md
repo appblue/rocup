@@ -6,10 +6,9 @@ Please note that this tool assumes that you have `curl` and `tar` installed on y
 
 **WARNINGS**
 
-* RocUp is attempting to overwrite `roc` and `roc_language_server` binaries in `/usr/local/bin` directory. If you have other versions of Roc compiler installed in `/usr/local/bin` or other tools named the same, they will be overwritten.
+- RocUp is attempting to overwrite `rocup`, `roc` and `roc_language_server` binaries in `/usr/local/bin` directory. If you have other versions of Roc compiler installed in `/usr/local/bin` or other tools named the same, they will be overwritten.
 
-* RocUp is a pre-release tool and is not yet fully tested. Please use it at your own risk.
-
+- RocUp is a pre-release tool and is not yet fully tested. Please use it at your own risk.
 
 **Note 1:** At the moment RocUp does not allow to download older versions of the Roc compiler. It only allows to download the latest version of the Roc compiler, but keeps all downloaded versions locally in the `~/.rocup` directory, and allows switching back and forth between them.
 
@@ -27,7 +26,7 @@ chmod a+x ~/.rocup/rocup
 
 ## Running RocUp
 
-To run RocUp, you can use the following command:
+To run RocUp for the first time, you can use the following command:
 
 ```bash
 $ ~/.rocup/rocup
@@ -39,15 +38,14 @@ This will:
 - install it locally in the `~/.rocup` directory
 - create a symbolic link to the Roc compiler in the `~/.rocup/roc` directory
 - (sudo priviledges required) create a symbolic links for `roc` and `roc_language_server` in `/usr/local/bin` to the compiler installed in the `~/.rocup/roc` directory
-
-If you add `.rocup` directory to your PATH, you can run `rocup` from anywhere in your terminal.
+- (sudo priviledges required) create a symbolic link for `rocup` in `/usr/local/bin` to the RocUp script (this is needed to run RocUp from anywhere in your terminal)
 
 ## Example usage
 
 Executing the `rocup` command will download the latest version of the Roc compiler and install it locally with symbolic links created. The output will look like this:
 
 ```terminal
-$ ~/.rocup/rocup
+$ rocup
 .. apple silicon mac detected
 .. downloading latest release of the Roc compiler
 .. extracting: roc_nightly-macos_apple_silicon-latest.tar.gz
@@ -70,7 +68,7 @@ $ ~/.rocup/rocup
 Over time, you will have more than one version of the Roc compiler downloaded locally in `.rocup` directory. You can switch between them using the following command (for example, to switch to the second latest version):
 
 ```terminal
-$ ~/.rocup/rocup 2
+$ rocup 2
 .. apple silicon mac detected
 .. downloading latest release of the Roc compiler
 .. extracting: roc_nightly-macos_apple_silicon-latest.tar.gz
