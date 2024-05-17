@@ -24,7 +24,7 @@ echo ".. extracting: $name"
 echo ".. installing nth latest local version (n = $version)"
 echo
 echo ".. selected locally available versions"
-echo "======================================"
+echo "   -----------------------------------"
 ( cd $ROCUP_HOME ; ls -t ~/.rocup/roc_*/roc | awk -vver=${version} '{ if (NR==ver) {print " -> ", $0} else {print "    ", $0}}' )
 
 echo
