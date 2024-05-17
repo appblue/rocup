@@ -4,12 +4,12 @@ RocUp is a tool for managing your Roc compiler installation. It allows you to in
 
 Please note that this tool assumes that you have `curl` and `tar` installed on your system, and that you have `sudo` privileges to create symbolic links in `/usr/local/bin` directory. There is all an assumption that `/usr/local/bin` is in your PATH for the Roc compiler to be available from anywhere in your terminal.
 
-** --== WARNING ==-- **
-RocUp is attempting to overwrite `roc` and `roc_language_server` binaries in `/usr/local/bin` directory. If you have other versions of Roc compiler installed in `/usr/local/bin` or other tools named the same, they will be overwritten.
+**WARNINGS**
 
-RocUp is a pre-release tool and is not yet fully tested. Please use it at your own risk.
+* RocUp is attempting to overwrite `roc` and `roc_language_server` binaries in `/usr/local/bin` directory. If you have other versions of Roc compiler installed in `/usr/local/bin` or other tools named the same, they will be overwritten.
 
-** --== WARNING ==-- **
+* RocUp is a pre-release tool and is not yet fully tested. Please use it at your own risk.
+
 
 **Note 1:** At the moment RocUp does not allow to download older versions of the Roc compiler. It only allows to download the latest version of the Roc compiler, but keeps all downloaded versions locally in the `~/.rocup` directory, and allows switching back and forth between them.
 
