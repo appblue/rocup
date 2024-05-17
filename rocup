@@ -3,6 +3,19 @@
 version=${1:-1}
 ROCUP_HOME=${ROCUP_HOME:-$HOME/.rocup}
 
+# simple parameter validation
+if [ "$version" -eq "$version" ] 2>/dev/null; then
+    if [ $version -lt 1 ]; then
+        echo "usage: $0 [version]"
+        echo "  version: positive integer, default 1"
+        exit 1
+    fi
+else
+    echo "usage: $0 [version]"
+    echo "  version: positive integer, default 1"
+    exit 1
+fi
+
 if [ "$(uname -s)" == "Darwin" -a "$(uname -m)" == "arm64" ]; then
     echo ".. apple silicon mac detected"
     platform_url='https://github.com/roc-lang/roc/releases/download/nightly/roc_nightly-macos_apple_silicon-latest.tar.gz'
