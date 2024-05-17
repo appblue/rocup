@@ -2,9 +2,18 @@
 
 RocUp is a tool for managing your Roc compiler installation. It allows you to install locally the latest version of the Roc compiler, and to switch between different locally installed versions.
 
-**Note:** At the moment RocUp does not allow to download older versions of the Roc compiler. It only allows to download the latest version of the Roc compiler, but keeps all downloaded versions locally in the `~/.rocup` directory, and allows switching back and forth between them.
+Please note that this tool assumes that you have `curl` and `tar` installed on your system, and that you have `sudo` privileges to create symbolic links in `/usr/local/bin` directory. There is all an assumption that `/usr/local/bin` is in your PATH for the Roc compiler to be available from anywhere in your terminal.
 
-**Note:** RocUp is currently only available for macOS (Silicon and Intel based machines) and Linux (x86_64).
+** --== WARNING ==-- **
+RocUp is attempting to overwrite `roc` and `roc_language_server` binaries in `/usr/local/bin` directory. If you have other versions of Roc compiler installed in `/usr/local/bin` or other tools named the same, they will be overwritten.
+
+RocUp is a pre-release tool and is not yet fully tested. Please use it at your own risk.
+
+** --== WARNING ==-- **
+
+**Note 1:** At the moment RocUp does not allow to download older versions of the Roc compiler. It only allows to download the latest version of the Roc compiler, but keeps all downloaded versions locally in the `~/.rocup` directory, and allows switching back and forth between them.
+
+**Note 2:** RocUp is currently only available for macOS (Silicon and Intel based machines) and Linux (x86_64).
 
 ## Installation
 
@@ -50,7 +59,7 @@ $ ~/.rocup/rocup
 
 .. creating local symlink to latest downloaded version
 roc nightly pre-release, built from commit e5ea6dc4617 on Mon May 13 10:47:45 UTC 2024
-````
+```
 
 Over time, you will have more than one version of the Roc compiler downloaded locally in `.rocup` directory. You can switch between them using the following command (for example, to switch to the second latest version):
 
