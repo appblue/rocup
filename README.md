@@ -1,5 +1,10 @@
 # RocUp - the tool for managing your Roc compiler installation
 
+> [!CAUTION]
+> **This project is obsolete and no longer maintained.** It does not support the latest versions of the Roc compiler.
+>
+> A much better, actively maintained implementation is available: **[imclerran/rocup](https://github.com/imclerran/rocup)**. Anyone interested in managing their Roc compiler installation should use it instead of this tool.
+
 RocUp is a tool for managing your Roc compiler installation. It allows you to install locally the latest version of the Roc compiler, and to switch between different locally installed versions.
 
 Please note that this tool assumes that you have `curl` and `tar` installed on your system, and that you have `sudo` privileges to create symbolic links in `/usr/local/bin` directory. There is all an assumption that `/usr/local/bin` is in your PATH for the Roc compiler to be available from anywhere in your terminal.
